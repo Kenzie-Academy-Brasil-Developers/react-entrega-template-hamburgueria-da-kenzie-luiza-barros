@@ -1,4 +1,12 @@
-function Card({products}) {
+function Card({products, currentSale, setCurrentSale}) {
+    function handleClick(event, product) {
+        const btnID = Number(event.target.id)
+        
+        if (btnID === product.id) {
+            setCurrentSale([...currentSale, product])
+        }
+    }
+
     return (
         <ul>
             {products.map(product => {
@@ -10,7 +18,7 @@ function Card({products}) {
                         <h2>{product.name}</h2>
                         <span>{product.category}</span>
                         <p>{product.price}</p>
-                        <button>Adicionar</button>
+                        <button id={product.id} onClick={(event) => handleClick(event, product)}>Adicionar</button>
                     </li>
                 )
             })}
