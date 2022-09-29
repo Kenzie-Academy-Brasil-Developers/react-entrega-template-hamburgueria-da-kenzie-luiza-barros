@@ -13,8 +13,13 @@ function App() {
 
     return (
         <div>
-            <Header/>
-            <Main products={products}/>
+            <div className="container">
+                <Header/>
+            </div>
+
+            <div className="container">
+                <Main products={products}/>
+            </div>
         </div>
     )
 }
