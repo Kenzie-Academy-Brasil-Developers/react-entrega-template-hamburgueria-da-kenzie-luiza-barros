@@ -1,6 +1,7 @@
+import Counter from "../Counter"
 import { useState } from "react"
 
-function CartProduct({ currentSale, setCurrentSale }) {
+function CartProduct({ currentSale, setCurrentSale, setPrices, prices }) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
 
     function handleClick(sale) {
@@ -25,6 +26,8 @@ function CartProduct({ currentSale, setCurrentSale }) {
                             <p>{Number(sale.price).toLocaleString('pt-BR', format)}</p>
                             <button id={(sale.id) * 2} onClick={() => handleClick(sale)}>Remover</button>
                         </div>
+
+                        <Counter setPrices={setPrices} prices={prices}/>
                     </li>
                 )
             })}

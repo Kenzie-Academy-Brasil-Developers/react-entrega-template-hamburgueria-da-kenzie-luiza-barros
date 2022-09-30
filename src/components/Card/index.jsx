@@ -5,7 +5,8 @@ function Card({products, currentSale, setCurrentSale}) {
         const btnID = Number(event.target.id)
         
         if (btnID === product.id) {
-            setCurrentSale([...currentSale, product])
+            const itHasRepeatedItem = currentSale.every(sale => sale.name !== product.name)
+            itHasRepeatedItem && setCurrentSale([...currentSale, product])
         }
     }
 
