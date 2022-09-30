@@ -7,6 +7,7 @@ import Aside from "./components/Aside"
 function App() {
     const [products, setProducts] = useState([])
     const [currentSale, setCurrentSale] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
 
     useEffect(() => {
         api.get()
@@ -16,12 +17,21 @@ function App() {
     return (
         <div>
             <div className="container">
-                <Header/>
+                <Header 
+                products={products} 
+                setFilteredProducts={setFilteredProducts}/>
             </div>
 
             <div className="container">
-                <Main products={products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
-                <Aside currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+                <Main 
+                products={products} 
+                currentSale={currentSale} 
+                setCurrentSale={setCurrentSale} 
+                filteredProducts={filteredProducts}/>
+                
+                <Aside 
+                currentSale={currentSale} 
+                setCurrentSale={setCurrentSale}/>
             </div>
         </div>
     )

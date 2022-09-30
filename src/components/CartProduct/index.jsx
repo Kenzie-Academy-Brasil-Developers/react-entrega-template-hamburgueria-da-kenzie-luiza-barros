@@ -1,8 +1,10 @@
 import { useState } from "react"
 
 function CartProduct({ currentSale, setCurrentSale }) {
+    const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
+
     function handleClick(sale) {
-        
+        setCurrentSale(currentSale.filter(element => element.name !== sale.name))
     }
 
     return (
@@ -20,7 +22,7 @@ function CartProduct({ currentSale, setCurrentSale }) {
                         </div>
                     
                         <div>
-                            <p>{sale.price}</p>
+                            <p>{Number(sale.price).toLocaleString('pt-BR', format)}</p>
                             <button id={(sale.id) * 2} onClick={() => handleClick(sale)}>Remover</button>
                         </div>
                     </li>

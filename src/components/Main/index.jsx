@@ -1,10 +1,10 @@
 import Card from "../Card"
 
-function Main({products, currentSale, setCurrentSale}) {
-    return products.length > 0 
-    ? <main>
-        <Card products={products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+function Main({products, currentSale, setCurrentSale, filteredProducts}) {
+    return (
+      <main>
+        <Card products={filteredProducts.length > 0 ? filteredProducts : products} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
       </main>
-    : ''
+    )
 }
 export default Main
