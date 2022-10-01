@@ -5,7 +5,7 @@ import CartTotal from "../CartTotal"
 
 function Aside({currentSale, setCurrentSale}) {
     const [cartTotal, setCartTotal] = useState([])
-    const [prices, setPrices] = useState([0])
+    const [counter, setCounter] = useState(1)
 
     if (currentSale.length > 0) {
         return (
@@ -13,16 +13,15 @@ function Aside({currentSale, setCurrentSale}) {
                 <CartProduct 
                 currentSale={currentSale} 
                 setCurrentSale={setCurrentSale}
-                prices={prices}
-                setPrices={setPrices}/>
+                counter={counter}
+                setCounter={setCounter}/>
 
                 <CartTotal 
-                prices={prices} 
-                setPrices={setPrices}
                 currentSale={currentSale}
                 cartTotal={cartTotal} 
                 setCartTotal={setCartTotal} 
-                setCurrentSale={setCurrentSale}/>
+                setCurrentSale={setCurrentSale}
+                counter={counter}/>
             </Cart>
         )
     } else {

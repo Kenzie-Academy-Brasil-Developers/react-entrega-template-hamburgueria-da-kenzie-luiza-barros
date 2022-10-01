@@ -1,13 +1,15 @@
-function CartTotal({currentSale, prices, cartTotal, setCartTotal, setCurrentSale, setPrices}) {
+import { useEffect } from "react"
+
+function CartTotal({currentSale, cartTotal, setCartTotal, setCurrentSale, counter}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
 
-    setCartTotal(currentSale.reduce((accumulator, { price }) => accumulator + price, 0))
-    setCartTotal(oldValue => oldValue + prices)
+    useEffect(() => {
+        setCartTotal(currentSale.reduce((accumulator, { price, amount }) => accumulator + (price * amount), 0))
+    }, [counter, currentSale, setCartTotal])
 
     function handleClick() {
         setCurrentSale([])
         setCartTotal([])
-        setPrices([])
     }
 
     return (
