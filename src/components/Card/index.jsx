@@ -1,14 +1,17 @@
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 function Card({products, currentSale, setCurrentSale}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
+    const notify = () => toast(`Produto adicionado ao carrinho`)
 
     function handleClick(event, product) {
         const btnID = Number(event.target.id)
         
         if (btnID === product.id) {
             const itHasRepeatedItem = currentSale.every(sale => sale.name !== product.name)
-
-            product.amount = 1
             itHasRepeatedItem && setCurrentSale([...currentSale, product])
+            notify()
         }
     }
 
@@ -27,6 +30,7 @@ function Card({products, currentSale, setCurrentSale}) {
                     </li>
                 )
             })}
+           <ToastContainer/>
         </ul>
     )
 }
