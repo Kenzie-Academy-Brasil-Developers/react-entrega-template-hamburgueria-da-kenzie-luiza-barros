@@ -1,0 +1,68 @@
+@import '../globalStyles/variables.css';
+
+.primaryBtn, .bgCart {
+    background: var(--color-primary);
+    color: var(--white);
+    font: var(--body-600);
+}
+
+.primaryBtn {
+    cursor: pointer;
+    width: 106px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 2rem;
+}
+
+.primaryBtn:hover {
+    background: var(--color-primary-50);
+}
+
+.bgCart {
+    height: 65px;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.cartEmpty, .cartFull {
+    background: var(--grey-0);
+    height: 470px;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.cartEmpty {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartFull ul {
+    height: 323px;
+    overflow-y: scroll;
+}
+
+.cartFull li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    height: 80px;
+}
+
+.cartFull img {
+    max-width: 50%;
+    object-fit: cover;
+    background: var(--grey-20);
+    border-radius: 5px;
+}
+
+.cartFull li div {
+    width: 90px;
+}

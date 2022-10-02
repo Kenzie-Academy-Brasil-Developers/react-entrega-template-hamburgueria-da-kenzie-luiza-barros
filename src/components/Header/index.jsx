@@ -1,4 +1,5 @@
-import Logo from "./assets/logo.svg"
+import Logo from './assets/logo.svg'
+import styles from '../modules/styles.module.css'
 
 function Header({ products, setFilteredProducts}) {
     function showFilteredProducts(event) {
@@ -14,14 +15,14 @@ function Header({ products, setFilteredProducts}) {
     }
 
     return (
-        <header>
+        <header className='container'>
             <img src={Logo} alt="Burguer Kenzie"/>
             <input 
             type="search" 
             name="search" 
             id="search" 
             placeholder="Digitar Pesquisa" onChange={(event) => showFilteredProducts(event)}/>
-            <button type="button">Pesquisar</button>
+            <button type="button" className={styles.primaryBtn}>Pesquisar</button>
         </header>
     )
 }

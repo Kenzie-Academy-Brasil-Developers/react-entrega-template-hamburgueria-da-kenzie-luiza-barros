@@ -1,0 +1,22 @@
+:root {
+    --color-primary: #27AE60;
+    --color-primary-50: #93D7AF;
+    --color-secondary: #EB5757;
+    --gray-100: #333333;
+    --grey-50: #828282;
+    --grey-20: #E0E0E0;
+    --grey-0: #F5F5F5;
+    --white: #ffffff;
+    --negative: #E60000;
+    --warning: #FFCD07;
+    --success: #168821;
+    --information: #155BCB;
+    --font-family: 'Inter', sans-serif;
+    --heading1: 700 2.6rem var(--font-family);
+    --heading2: 700 1.8rem var(--font-family);
+    --heading4: 700 1.4rem var(--font-family);
+    --headline: 400 1.6rem var(--font-family);
+    --body: 400 1.4rem var(--font-family);
+    --body-600: 600 1.4rem/16.94px var(--font-family);
+    --caption: 400 1.2rem var(--font-family);
+}

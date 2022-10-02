@@ -2,6 +2,7 @@ import Cart from "../Cart"
 import CartProduct from "../CartProduct"
 import { useState } from "react"
 import CartTotal from "../CartTotal"
+import styles from "../modules/styles.module.css"
 
 function Aside({currentSale, setCurrentSale}) {
     const [cartTotal, setCartTotal] = useState([])
@@ -9,7 +10,7 @@ function Aside({currentSale, setCurrentSale}) {
 
     if (currentSale.length > 0) {
         return (
-            <Cart>
+            <Cart className={styles.cartFull}>
                 <CartProduct 
                 currentSale={currentSale} 
                 setCurrentSale={setCurrentSale}
@@ -26,8 +27,8 @@ function Aside({currentSale, setCurrentSale}) {
         )
     } else {
         return (
-            <Cart>
-                <h4>Sua sacola está vazia</h4>
+            <Cart className={styles.cartEmpty}>
+                <h2>Sua sacola está vazia</h2>
                 <span>Adicione itens</span>
             </Cart>
         )

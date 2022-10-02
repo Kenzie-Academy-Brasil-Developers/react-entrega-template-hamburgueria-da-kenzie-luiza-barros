@@ -4,7 +4,9 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function CartProduct({ currentSale, setCurrentSale, counter, setCounter}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
-    const notify = (name) => toast(`${name} removido do carrinho`)
+    const notify = (name) => toast.error(`${name} removido do carrinho`, {
+         theme: "colored"
+    })
 
     function handleClick(sale) {
         setCurrentSale(currentSale.filter(element => element.name !== sale.name))
@@ -17,17 +19,17 @@ function CartProduct({ currentSale, setCurrentSale, counter, setCounter}) {
                 sale.amount = counter
 
                 return (
-                    <li key={(sale.id) * 2}> 
-                        <div>
+                    <li key={(sale.id) * 2} className="cart"> 
+                        <div className="cart__imgWrapper cart__content">
                             <img src={sale.img} alt={sale.name}/>
                         </div>
 
-                        <div>
-                            <h2>{sale.name}</h2>
+                        <div className="cart__content">
+                            <h4>{sale.name}</h4>
                             <span>{sale.category}</span>
                         </div>
                     
-                        <div>
+                        <div className="cart__priceAndRemoveBtn cart__content">
                             <p>{Number(sale.price).toLocaleString('pt-BR', format)}</p>
                             <button id={(sale.id) * 2} onClick={() => handleClick(sale)}>Remover</button>
                         </div>

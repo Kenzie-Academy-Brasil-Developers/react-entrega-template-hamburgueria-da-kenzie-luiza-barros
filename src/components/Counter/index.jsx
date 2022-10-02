@@ -8,7 +8,7 @@ function Counter({ counter, setCounter }) {
     }
 
     return (
-        <div>
+        <div className="cart__counter cart__content">
             <p>{counter}</p>
             <button onClick={() => addNumber()}>+</button>
             <button onClick={() => counter > 1 && subNumber()}>-</button>

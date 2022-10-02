@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import api from "./services/api"
 import Main from "./components/Main"
 import Aside from "./components/Aside"
+import './components/globalStyles/index.css'
 
 function App() {
     const [products, setProducts] = useState([])
@@ -16,13 +17,13 @@ function App() {
 
     return (
         <div>
-            <div className="container">
+            <div className="menu">
                 <Header 
                 products={products} 
                 setFilteredProducts={setFilteredProducts}/>
             </div>
 
-            <div className="container">
+            <div className="container mainContent">
                 <Main 
                 products={products} 
                 currentSale={currentSale} 

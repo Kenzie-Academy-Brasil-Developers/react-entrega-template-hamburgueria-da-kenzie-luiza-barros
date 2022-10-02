@@ -1,0 +1,41 @@
+.menu {
+    background: var(--grey-0);
+}
+
+.menu input, .mainContent__cards li {
+    border: 2px solid var(--grey-20);
+}
+
+.card__imgWrapper, .cart__checkout__removeAll {
+    background: var(--grey-20);
+}
+
+.cart__counter button {
+    color: var(--white);
+}
+
+.cart__counter button:nth-of-type(1) {
+    background: var(--success);
+}
+
+.cart__counter button:nth-of-type(2) {
+    background: var(--negative);
+}
+
+.cart__checkout {
+    border-top: 2px solid var(--grey-20);
+}
+
+span, .cart__priceAndRemoveBtn button {
+    color: var(--grey-50);
+    background: transparent;
+}
+
+.cart__checkout__removeAll:hover {
+    background: var(--grey-50);
+    color: var(--grey-20);
+}
+
+p {
+    color: var(--color-primary);
+}

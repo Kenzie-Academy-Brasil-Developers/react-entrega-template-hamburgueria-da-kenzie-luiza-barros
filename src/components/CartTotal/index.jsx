@@ -13,12 +13,16 @@ function CartTotal({currentSale, cartTotal, setCartTotal, setCurrentSale, counte
     }
 
     return (
-        <div>
+        <div className="cart__checkout">
             <div>
                 <p>Total</p>
                 <span>{Number(cartTotal).toLocaleString('pt-BR', format)}</span>
             </div>
-            <button type="button" onClick={() => handleClick()}>Remover Todos</button>
+            
+            <button 
+            type="button" 
+            onClick={() => handleClick()} 
+            className="cart__checkout__removeAll">Remover Todos</button>
         </div>
     )
 }
