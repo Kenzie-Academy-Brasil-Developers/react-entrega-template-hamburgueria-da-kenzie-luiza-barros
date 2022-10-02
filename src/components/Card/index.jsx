@@ -1,6 +1,7 @@
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from '../modules/styles.module.css'
+import '../globalStyles/texts.css'
 
 function Card({products, currentSale, setCurrentSale}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }

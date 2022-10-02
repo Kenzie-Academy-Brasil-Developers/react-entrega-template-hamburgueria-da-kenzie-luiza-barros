@@ -1,6 +1,7 @@
 import Counter from "../Counter"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import '../globalStyles/texts.css'
 
 function CartProduct({ currentSale, setCurrentSale, counter, setCounter}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
