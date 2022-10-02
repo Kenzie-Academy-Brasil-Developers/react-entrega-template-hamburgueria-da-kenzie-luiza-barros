@@ -1,15 +1,15 @@
-h2 {
+.card h2, .cartWrapper h2 {
     font: var(--heading2);
 }
 
-h4 {
+.cartWrapper h4 {
     font: var(--heading4);
 }
 
-span, .cart__priceAndRemoveBtn p, .cart__priceAndRemoveBtn button {
+.card span, .cartWrapper span, .cart__priceAndRemoveBtn p, .cart__priceAndRemoveBtn button {
     font: var(--caption);
 }
 
-p, .cart__checkout__removeAll {
+.card p, .cartWrapper p, .cart__checkout__removeAll {
     font: var(--body-600);
 }
