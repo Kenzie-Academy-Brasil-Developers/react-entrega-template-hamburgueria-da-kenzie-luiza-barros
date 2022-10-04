@@ -45,6 +45,10 @@
     .mainContent__cards li {
         width: 275px;
     }
+
+    .cartWrapper {
+        min-width: 274px;
+    }
 }
 
 @media (min-width: 1200px) {
