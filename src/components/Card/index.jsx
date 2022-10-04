@@ -15,10 +15,10 @@ function Card({products, currentSale, setCurrentSale}) {
         if (btnID === product.id) {
             const itHasRepeatedItem = currentSale.every(sale => sale.name !== product.name)
             if (itHasRepeatedItem) {
-                notify(`Produto já foi adicionado ao carrinho`)
-            } else {
-                setCurrentSale([...currentSale, product])
                 notify(`Produto adicionado ao carrinho`)
+                setCurrentSale([...currentSale, product])
+            } else {
+                notify(`Produto já foi adicionado ao carrinho`)
             }
         }
     }
