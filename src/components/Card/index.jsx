@@ -5,7 +5,7 @@ import '../globalStyles/texts.css'
 
 function Card({products, currentSale, setCurrentSale}) {
     const format = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
-    const notify = () => toast.success(`Produto adicionado ao carrinho`, {
+    const notify = (message) => toast.success(message, {
         theme: "colored"
     })
 
@@ -14,8 +14,12 @@ function Card({products, currentSale, setCurrentSale}) {
         
         if (btnID === product.id) {
             const itHasRepeatedItem = currentSale.every(sale => sale.name !== product.name)
-            itHasRepeatedItem && setCurrentSale([...currentSale, product])
-            notify()
+            if (itHasRepeatedItem) {
+                notify(`Produto já foi adicionado ao carrinho`)
+            } else {
+                setCurrentSale([...currentSale, product])
+                notify(`Produto adicionado ao carrinho`)
+            }
         }
     }
 
